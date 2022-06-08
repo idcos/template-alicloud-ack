@@ -29,5 +29,5 @@ template-alicloud-ack
 
 作者
 -------
-Created and maintained by Evan (github.com/xuxiaoahang2018)
-Updated by Brian (github.com/brianchenl)
+* Created and maintained by Evan (github.com/xuxiaoahang2018)
+* Updated by Brian (github.com/brianchenl)
