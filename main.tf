@@ -16,11 +16,6 @@ data "alicloud_instance_types" "default" {
   kubernetes_node_role = "Worker"
 }
 
-// 满足实例规格的AZ。
-# data "alicloud_zones" "default" {
-#   available_instance_type = data.alicloud_instance_types.default.instance_types[0].id
-# }
-
 # 专有网络。
 resource "alicloud_vpc" "default" {
   vpc_name   = local.new_vpc_name
@@ -32,8 +27,7 @@ resource "alicloud_vswitch" "vswitches" {
   vswitch_name = local.new_vsw_name
   vpc_id       = alicloud_vpc.default.id
   cidr_block   = var.vpc_cidr
-  zone_id      = "cn-beijing-e"
-  # zone_id      = data.alicloud_zones.default.zones[0].id
+  zone_id      = var.zone_id
 }
 
 # 负载均衡
